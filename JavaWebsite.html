@@ -10,10 +10,10 @@
         background-color:#151620;
         left:0;
         top:0;
-
+        padding: 0px;
     }
 
-    .btn {
+    .sideBarBtn {
         background-color: #151620;
         border: none;
         cursor: pointer;
@@ -21,7 +21,7 @@
         height:50px;    
     }
 
-    .btn:hover{
+    .sideBarBtn:hover{
         background-color: #4e5276;
     }
 
@@ -46,6 +46,21 @@
         user-select: none;
     }
 
+    .main{
+        display:grid;
+        position:fixed;
+        background-color:grey;
+        width: 100%;
+        height: 100%;
+        margin-left: 100px;
+        top:0;
+        padding:0;
+
+    }
+
+    .mainHeader{
+        left: -100px;
+    }
 
     .hidden {
         visibility:hidden;
@@ -60,15 +75,26 @@
     </head>
 
     <body>
-        <div class="sideBar">
-            <center>
-                <h1 class="side-header">Java & Stuff</header>
-                    <button class="btn helvetica">Home</button>
-                    <button class="btn helvetica">FAQ</button>
-                    <button class="btn helvetica">Calculator</button>
-                    <button class="btn helvetica">Other Thingy</button>
-            </center>
-        </div>
+        
+            <div class="main">
+                <center>
+                    <header class="helvetica">
+                        Wassup.
+                    </header>
+                </center>
+            </div>
+                <div class="sideBar">
+                    <center>
+                        <h1 class="side-header">Java & Stuff</header>
+                            <button class="sideBarBtn helvetica">Home</button>
+                            <button class="sideBarBtn helvetica">FAQ</button>
+                            <button class="sideBarBtn helvetica">Calculator</button>
+                            <button class="sideBarBtn helvetica">Other Thingy</button>
+                    </center>
+                </div>
+    </body>
+
+    <body>
 
     </body>
 
