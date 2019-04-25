@@ -1,0 +1,34 @@
+Switch to next variable when plus, sub, mult, div is pressed.
+If enter is pressed and y is NULL, return x;
+
+N = Exponent of the Number
+
+When adding a new number, put number into the end of a queue and push the oldest one.
+
+3
+
+3*10^1
+
+  |
+  |
+  |
+  |
+  V
+
+34
+
+3*10^1
+4*10^0
+
+  |
+  |
+  |
+  |
+  V
+
+
+341
+
+3*10^2
+4*10^1
+1*10^0
