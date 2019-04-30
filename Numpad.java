@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.GridBagConstraints;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +35,9 @@ public class Numpad extends JPanel{
 		}
 		this.buttonNames.add("+");
 		this.buttonNames.add("=");
-		this.buttonNames.add(".");
 		this.buttonNames.add("0");
+		this.buttonNames.add("Clear");
+
 		
         this.setLayout(null);
         this.setSize(Calculator.WIDTH, 3 * Calculator.HEIGHT / 4);
@@ -49,9 +51,7 @@ public class Numpad extends JPanel{
         for(int i = 0; i < 4; i++) {
         	for(int j = 3; j >= 0; j--) {
 	        	button = new JButton(this.buttonNames.get(k));
-	        	//button.setSize( Numpad.WIDTH / 3, Numpad.HEIGHT / 4);
 	        	button.setSize( Numpad.WIDTH / 4, Numpad.HEIGHT / 4);
-	        	//button.setBounds( ((j%3) * Numpad.WIDTH) / 3, ((i%4) * Numpad.HEIGHT) / 4, Numpad.WIDTH / 3, Numpad.HEIGHT / 4);
 	        	button.setBounds( ((j%4) * Numpad.WIDTH) / 4, ((i%4) * Numpad.HEIGHT) / 4, Numpad.WIDTH / 4, Numpad.HEIGHT / 4);
 		        this.buttons.add(button);
 		        this.add(button);
@@ -59,6 +59,12 @@ public class Numpad extends JPanel{
         	}
         }
 		
+	}
+	
+	public  void setListener(ActionListener a) {
+		for(int i = 0; i < 16; i++) {
+			this.buttons.get(i).addActionListener(a);
+		}
 	}
 	
 	

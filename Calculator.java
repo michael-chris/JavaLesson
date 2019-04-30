@@ -9,9 +9,9 @@ public class Calculator extends JFrame{
     private Numpad num;
     private Display dis;
     
-	private int x;
-	private int y;
-	private int answer;
+	private String x;
+	private String y;
+	private String answer;
 	
 	public Calculator(){
 		
@@ -45,45 +45,52 @@ public class Calculator extends JFrame{
 	}
 	
 	
-	
-	public int getX() {
-		return x;
+	public void addX(String x) {
+		this.x += x;
 	}
 	
-	public int getY() {
-		return y;
+	public void addY(String y) {
+		this.y += y;
 	}
 	
 	
-	public int getAnswer() {
-		return answer;
-	}
-	
-	//Adds Two numbers together and returns answer;
-	public int add(int x, int y) {
-		return x + y;
-	}
-	
-	//Subtracts Two Numbers together and returns answer;
-	public int sub(int x, int y) {
-		return x - y;
-	}
-	
-	//Multiplies Two numbers together and returns answer;
-	public int multi(int x, int y) {
-		return x * y;
-	}
-	
-	//Divides Two Numbers Together and Returns answer, if divided by zero throws error;
-	public int div(int x, int y) {
-		try {
-			answer = x / y;
-		}
-		catch (ArithmeticException ae){
-			System.out.println("Divide by 0 Error!");
-			return 0;
-		}
-		return answer;
+	public String getAnswer(String x, String y, String expres) {
 		
+		
+		if(expres == "+") {
+			this.answer = Integer.toString(Integer.parseInt(x) + Integer.parseInt(y));
+			
+		}
+		
+		
+		else if(expres == "-") {
+			this.answer = Integer.toString(Integer.parseInt(x) - Integer.parseInt(y));
+		}
+		
+		
+		else if(expres == "*") {
+			this.answer = Integer.toString(Integer.parseInt(x) * Integer.parseInt(y));
+		}
+		
+		
+		else if(expres == "/") {
+			if(y=="0")
+				this.answer = "Divide by 0 Error!";
+			else {
+				this.answer = Integer.toString(Integer.parseInt(x) / Integer.parseInt(y));
+			}
+
+		}
+		
+		
+		else {
+			this.answer = "EXPRES WAS SOMEHOW NOTHING!";
+		}
+		
+		
+		return this.answer;
+			
 	}
+	
+	
 }

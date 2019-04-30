@@ -11,9 +11,6 @@ public class Display extends JTextArea{
 	}
     
 	public void inputExpres(String expres) {
-		this.setText("");
-		this.append(expres);
-		
+		this.setText(expres);
 	}
-	
 }
